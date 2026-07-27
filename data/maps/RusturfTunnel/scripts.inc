@@ -13,7 +13,8 @@ RusturfTunnel_OnTransition:
 	end
 
 RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos::
-	setobjectxyperm LOCALID_RUSTURF_TUNNEL_PEEKO, 13, 4
+	setobjectxyperm LOCALID_RUSTURF_TUNNEL_PEEKO, 14, 4
+	setobjectxyperm LOCALID_RUSTURF_TUNNEL_GRUNT_MAGMA, 13, 4
 	setobjectxyperm LOCALID_RUSTURF_TUNNEL_GRUNT, 13, 5
 	return
 
@@ -272,9 +273,11 @@ RusturfTunnel_EventScript_AquaGruntBackUp::
 	msgbox RusturfTunnel_Text_ComeAndGetSome, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_RUSTURF_TUNNEL_GRUNT, RusturfTunnel_Movement_GruntAndPeekoBackUp
+	applymovement LOCALID_RUSTURF_TUNNEL_GRUNT_MAGMA, RusturfTunnel_Movement_GruntAndPeekoBackUp
 	applymovement LOCALID_RUSTURF_TUNNEL_PEEKO, RusturfTunnel_Movement_GruntAndPeekoBackUp
 	waitmovement 0
 	copyobjectxytoperm LOCALID_RUSTURF_TUNNEL_GRUNT
+	copyobjectxytoperm LOCALID_RUSTURF_TUNNEL_GRUNT_MAGMA
 	copyobjectxytoperm LOCALID_RUSTURF_TUNNEL_PEEKO
 	setvar VAR_RUSTURF_TUNNEL_STATE, 3
 	releaseall
@@ -301,14 +304,16 @@ RusturfTunnel_EventScript_Grunt::
 	faceplayer
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	msgbox RusturfTunnel_Text_GruntIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_RUSTURF_TUNNEL, RusturfTunnel_Text_GruntDefeat
+	trainerbattle_two_trainers TRAINER_GRUNT_AQUA_RUSTURF_TUNNEL, RusturfTunnel_Text_GruntDefeat, TRAINER_GRUNT_MAGMA_RUSTURF_TUNNEL, RusturfTunnel_Text_Grunt_MagmaDefeat
 	msgbox RusturfTunnel_Text_GruntTakePackage, MSGBOX_DEFAULT
 	giveitem ITEM_DEVON_PARTS
 	closemessage
 	applymovement LOCALID_PLAYER, RusturfTunnel_Movement_PushPlayerAsideForGrunt
 	applymovement LOCALID_RUSTURF_TUNNEL_GRUNT, RusturfTunnel_Movement_GruntEscape
+	applymovement LOCALID_RUSTURF_TUNNEL_GRUNT_MAGMA, RusturfTunnel_Movement_Grunt_MagmaEscape
 	waitmovement 0
 	removeobject LOCALID_RUSTURF_TUNNEL_GRUNT
+	removeobject LOCALID_RUSTURF_TUNNEL_GRUNT_MAGMA
 	delay 50
 	addobject LOCALID_RUSTURF_TUNNEL_BRINEY
 	applymovement LOCALID_RUSTURF_TUNNEL_BRINEY, RusturfTunnel_Movement_BrineyApproachPeeko1
@@ -354,6 +359,19 @@ RusturfTunnel_Movement_PlayerMoveAsideForBriney:
 	step_end
 
 RusturfTunnel_Movement_GruntEscape:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+RusturfTunnel_Movement_Grunt_MagmaEscape:
+	walk_fast_down
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
@@ -429,20 +447,24 @@ RusturfTunnel_Text_GruntIntro:
 	.string "Grah, keelhaul it all!\p"
 	.string "That hostage POKéMON turned out to\n"
 	.string "be worthless!\p"
-	.string "And to think I made a getaway…\n"
+	.string "And to think we made a getaway…\n"
 	.string "In this tunnel to nowhere!\p"
 	.string "Hey! You!\n"
-	.string "So you want to battle me?$"
+	.string "So you want to battle us?$"
 
 RusturfTunnel_Text_GruntDefeat:
 	.string "Urrrggh! My career in crime comes to\n"
 	.string "a dead end!$"
 
+RusturfTunnel_Text_Grunt_MagmaDefeat:
+	.string "Urrrggh! You mean our careers in crime\n"
+	.string "comes to a dead end!$"
+
 RusturfTunnel_Text_GruntTakePackage:
 	.string "This is plain not right…\p"
-	.string "The BOSS told me this would be a\n"
+	.string "The BOSSES told us this would be a\n"
 	.string "slick-and-easy job to pull.\p"
-	.string "All I had to do was steal some package\n"
+	.string "All we had to do was steal some package\n"
 	.string "from DEVON.\p"
 	.string "Tch!\n"
 	.string "You want it back that badly, take it!$"

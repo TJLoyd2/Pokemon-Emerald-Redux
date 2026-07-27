@@ -1,6 +1,8 @@
 #include "global.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
+#include "battle_pike.h"
+#include "battle_pyramid_bag.h"
 #include "battle_setup.h"
 #include "battle_util.h"
 #include "berry.h"
@@ -82,6 +84,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "ui_startmenu_full.h"
 
 STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
@@ -4074,4 +4077,17 @@ static void Task_OvwldCredits_WaitFade(u8 taskId)
         SetMainCallback2(CB2_LoadMap);
         DestroyTask(taskId);
     }
+}
+
+void CB2_ReturnToFullScreenStartMenu(void)
+{
+    FieldClearVBlankHBlankCallbacks();
+
+    if (GetSafariZoneFlag() || InBattlePyramid_() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
+    {
+        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        return;
+    }
+
+	StartMenuFull_Init(CB2_ReturnToField);
 }

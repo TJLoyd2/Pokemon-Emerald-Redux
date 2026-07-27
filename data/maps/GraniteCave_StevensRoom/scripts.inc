@@ -2,6 +2,11 @@ GraniteCave_StevensRoom_MapScripts::
 	.byte 0
 
 GraniteCave_StevensRoom_EventScript_Steven::
+	msgbox GraniteCave_StevensRoom_Text_StevenSeemsBusy, MSGBOX_DEFAULT
+	release
+	end
+
+GraniteCave_StevensRoom_EventScript_Lucy::
 	lock
 	faceplayer
 	msgbox GraniteCave_StevensRoom_Text_ImStevenLetterForMe, MSGBOX_DEFAULT
@@ -9,6 +14,9 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	call Common_EventScript_PlayerHandedOverTheItem
 	setflag FLAG_DELIVERED_STEVEN_LETTER
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
+	giveitem ITEM_TM_SLUDGE_BOMB
+	call_if_eq VAR_RESULT, FALSE, GraniteCave_StevensRoom_EventScript_BagFull
+	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThisToo, MSGBOX_DEFAULT
 	giveitem ITEM_TM_STEEL_WING
 	call_if_eq VAR_RESULT, FALSE, GraniteCave_StevensRoom_EventScript_BagFull
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
@@ -22,29 +30,33 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	setflag FLAG_REGISTERED_STEVEN_POKENAV
 	msgbox GraniteCave_StevensRoom_Text_IveGotToHurryAlong, MSGBOX_DEFAULT
 	closemessage
-	call_if_eq VAR_FACING, DIR_NORTH, GraniteCave_StevensRoom_EventScript_StevenExitNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, GraniteCave_StevensRoom_EventScript_StevenExitSouth
-	call_if_eq VAR_FACING, DIR_WEST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
-	call_if_eq VAR_FACING, DIR_EAST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
+	call_if_eq VAR_FACING, DIR_NORTH, GraniteCave_StevensRoom_EventScript_LucyExitNorth
+	call_if_eq VAR_FACING, DIR_SOUTH, GraniteCave_StevensRoom_EventScript_LucyExitSouth
+	call_if_eq VAR_FACING, DIR_WEST, GraniteCave_StevensRoom_EventScript_LucyExitWestEast
+	call_if_eq VAR_FACING, DIR_EAST, GraniteCave_StevensRoom_EventScript_LucyExitWestEast
 	playse SE_EXIT
+	removeobject LOCALID_GRANITE_CAVE_LUCY
 	removeobject LOCALID_GRANITE_CAVE_STEVEN
 	release
 	end
 
-GraniteCave_StevensRoom_EventScript_StevenExitNorth::
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
+GraniteCave_StevensRoom_EventScript_LucyExitNorth::
+	applymovement LOCALID_GRANITE_CAVE_LUCY, GraniteCave_StevensRoom_Movement_LucyExit
+	applymovement LOCALID_GRANITE_CAVE_LUCY, GraniteCave_StevensRoom_Movement_StevenExit
 	waitmovement 0
 	return
 
-GraniteCave_StevensRoom_EventScript_StevenExitWestEast::
+GraniteCave_StevensRoom_EventScript_LucyExitWestEast::
 	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
+	applymovement LOCALID_GRANITE_CAVE_LUCY, GraniteCave_StevensRoom_Movement_LucyExit
+	applymovement LOCALID_GRANITE_CAVE_LUCY, GraniteCave_StevensRoom_Movement_StevenExit
 	waitmovement 0
 	return
 
-GraniteCave_StevensRoom_EventScript_StevenExitSouth::
+GraniteCave_StevensRoom_EventScript_LucyExitSouth::
 	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExitSouth
+	applymovement LOCALID_GRANITE_CAVE_LUCY, GraniteCave_StevensRoom_Movement_LucyExitSouth
+	applymovement LOCALID_GRANITE_CAVE_LUCY, GraniteCave_StevensRoom_Movement_StevenExitSouth
 	waitmovement 0
 	return
 
@@ -52,7 +64,20 @@ GraniteCave_StevensRoom_EventScript_BagFull::
 	msgbox GraniteCave_StevensRoom_Text_OhBagIsFull, MSGBOX_DEFAULT
 	return
 
+GraniteCave_StevensRoom_Movement_LucyExit:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	delay_8
+	step_end
+
 GraniteCave_StevensRoom_Movement_StevenExit:
+	walk_left
+	walk_left
+	walk_up
+	walk_left
 	walk_up
 	walk_up
 	walk_up
@@ -68,7 +93,7 @@ GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit:
 	walk_in_place_faster_up
 	step_end
 
-GraniteCave_StevensRoom_Movement_StevenExitSouth:
+GraniteCave_StevensRoom_Movement_LucyExitSouth:
 	walk_left
 	walk_up
 	walk_up
@@ -79,24 +104,47 @@ GraniteCave_StevensRoom_Movement_StevenExitSouth:
 	delay_8
 	step_end
 
+GraniteCave_StevensRoom_Movement_StevenExitSouth:
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	delay_8
+	step_end
+
 GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
-	.string "My name is STEVEN.\p"
-	.string "I'm interested in rare stones,\n"
-	.string "so I travel here and there.\p"
+	.string "My name is LUCY.\p"
+	.string "My friend here is interested in\n"
+	.string "rare stones, so we travel here\n"
+	.string "and there.\p"
 	.string "Oh?\n"
-	.string "A LETTER for me?$"
+	.string "A LETTER for STEVEN?$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
-	.string "STEVEN: Okay, thank you.\p"
+	.string "LUCY: Okay, thank you.\p"
 	.string "You went through all this trouble to\n"
-	.string "deliver that. I need to thank you.\p"
+	.string "deliver that. We gotta thank you.\p"
 	.string "Let me see…\n"
 	.string "I'll give you this TM.\p"
 	.string "It contains my favorite move,\n"
+	.string "SLUDGE BOMB.$"
+
+GraniteCave_StevensRoom_Text_ThankYouTakeThisToo:
+	.string "LUCY: I'm sure STEVEN would want you\n"
+	.string "to have this as well.\p"
+	.string "Let me see…\n"
+	.string "… … … … … …\p"
+	.string "Here we go!\p"
+	.string "I found STEVEN's favorite move as well.\n"
 	.string "STEEL WING.$"
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
-	.string "STEVEN: Your POKéMON appear quite\n"
+	.string "LUCY: Your POKéMON appear quite\n"
 	.string "capable.\p"
 	.string "If you keep training, you could even\n"
 	.string "become the CHAMPION of the POKéMON\l"
@@ -107,13 +155,19 @@ GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
 	.string "… … … … … …$"
 
 GraniteCave_StevensRoom_Text_RegisteredSteven:
-	.string "Registered STEVEN\n"
+	.string "Registered STEVEN and LUCY\n"
 	.string "in the POKéNAV.$"
 
 GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
-	.string "Now, I've got to hurry along.$"
+	.string "Now, we've got to hurry along.\p"
+	.string "STEVEN, let's go!$"
 
 GraniteCave_StevensRoom_Text_OhBagIsFull:
 	.string "Oh, your BAG is full…\n"
 	.string "That's too bad, then.$"
 
+GraniteCave_StevensRoom_Text_StevenSeemsBusy:
+	.string "He seems occupied by that bright\n"
+	.string "blue stone.\p"
+	.string "… … … … … …\p"
+	.string "Hmm...$"

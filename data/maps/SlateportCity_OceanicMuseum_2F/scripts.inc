@@ -285,20 +285,20 @@ SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
 	.string "Who are you people?$"
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua:
-	.string "We're TEAM AQUA!\p"
-	.string "Our BOSS wants those parts!\n"
+	.string "We're TEAM AQUA and MAGMA!\p"
+	.string "Our BOSSES wants those parts!\n"
 	.string "Shut your yap and fork them over!$"
 
 SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat:
 	.string "Awaaaah!\n"
-	.string "A kid beat me!$"
+	.string "No way a kid beat me!$"
 
 SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious:
 	.string "Oh, man, what a disaster…\n"
-	.string "The BOSS is going to be furious…$"
+	.string "Our BOSSES are going to be pissed…$"
 
 SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis:
-	.string "Humph, sniveling wimp!\n"
+	.string "Humph, you're useless Shelly!\n"
 	.string "Let me take care of this!$"
 
 SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat:
@@ -323,9 +323,9 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "ARCHIE!\p"
 	.string "What makes you interfere with us?\p"
 	.string "…No! You can't be!\n"
-	.string "You're not one of TEAM MAGMA?\p"
+	.string "You're not one of them?\p"
 	.string "Wait, that can't be right.\n"
-	.string "You're not dressed for the part.\p"
+	.string "We're SUPPOSEDLY working together.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "POKéMON, people… All life depends on\n"

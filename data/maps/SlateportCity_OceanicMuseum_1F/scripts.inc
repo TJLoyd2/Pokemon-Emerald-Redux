@@ -247,7 +247,7 @@ SlateportCity_OceanicMuseum_1F_Text_AquaExistForGoodOfAll:
 SlateportCity_OceanicMuseum_1F_Text_OurBossIsntHere:
 	.string "We were told to assemble here,\n"
 	.string "so we did, but…\p"
-	.string "Our BOSS, the linchpin, isn't here.$"
+	.string "Our BOSSES, the linchpins, aren't here.$"
 
 SlateportCity_OceanicMuseum_1F_Text_WouldStuffHereMakeMeRich:
 	.string "If I ripped off the stuff here,\n"
@@ -289,7 +289,7 @@ SlateportCity_OceanicMuseum_1F_Text_WantSeaPokemon:
 SlateportCity_OceanicMuseum_1F_Text_RememberMeTakeThis:
 	.string "Aiyeeeh!\n"
 	.string "What are you doing here?\p"
-	.string "Me? I'm the TEAM AQUA member\n"
+	.string "Me? I'm the TEAM MAGMA member\n"
 	.string "you thumped before, remember?\l"
 	.string "Back in RUSTURF TUNNEL?\p"
 	.string "Here, take this!\n"

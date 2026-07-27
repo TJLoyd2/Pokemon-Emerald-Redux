@@ -4024,6 +4024,69 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sWugtrioLevelUpLearnset,
         .teachableLearnset = sWugtrioTeachableLearnset,
+		.evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_PENTAWUG}),
+    },
+	[SPECIES_PENTAWUG] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 120,
+        .baseDefense   = 75,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 50,
+        .expYield = 149,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_3),
+        .abilities = { ABILITY_GOOEY, ABILITY_RATTLED, ABILITY_SAND_VEIL },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Pentawug"),
+        .cryId = CRY_WUGTRIO,
+        .natDexNum = NATIONAL_DEX_WUGTRIO,
+        .categoryName = _("Garden Eel"),
+        .height = 12,
+        .weight = 54,
+        .description = COMPOUND_STRING(
+            "Five separate bodies share a single stone\n"
+            "fortress. The central, purple head acts as\n"
+			"the master brain, directing the surrounding\n"
+            "blue heads to ambush prey from all angles."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Pentawug,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Pentawug,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 11,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Pentawug,
+        .shinyPalette = gMonShinyPalette_Pentawug,
+        .iconSprite = gMonIcon_Wugtrio,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        NO_SHADOW
+        FOOTPRINT(Wugtrio)
+        OVERWORLD(
+            sPicTable_Wugtrio,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            sAnimTable_Following,
+            gOverworldPalette_Wugtrio,
+            gShinyOverworldPalette_Wugtrio
+        )
+        .levelUpLearnset = sPentawugLevelUpLearnset,
+        .teachableLearnset = sWugtrioTeachableLearnset,
     },
 #endif //P_FAMILY_WIGLETT
 

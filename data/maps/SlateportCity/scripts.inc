@@ -1012,18 +1012,18 @@ SlateportCity_Text_QuitPushing:
 	.string "This is the line, can't you see?$"
 
 SlateportCity_Text_AquaHasPolicy:
-	.string "TEAM AQUA has a policy of\n"
+	.string "TEAM AQUA and MAGMA have a policy of\n"
 	.string "assembling and dispersing at\l"
 	.string "the operation site.$"
 
 SlateportCity_Text_BossIsBrilliant:
-	.string "Our BOSS is brilliant.\p"
-	.string "What would he want to do with\n"
+	.string "Our BOSSES are brilliant.\p"
+	.string "What would they want to do with\n"
 	.string "a MUSEUM now?$"
 
 SlateportCity_Text_WhatsNewSchemeIWonder:
 	.string "What's the new scheme, I wonder?\p"
-	.string "Our BOSS is scary when he's mad, so\n"
+	.string "Our BOSSES are scary when they're mad, so\n"
 	.string "I'd better not screw things up…$"
 
 SlateportCity_Text_ShouldTakeItAll:
@@ -1054,7 +1054,7 @@ SlateportCity_Text_IllReadSignForYou:
 SlateportCity_Text_SaysSomethingLikeSeaIsEndless:
 	.string "Let's see…\p"
 	.string "Um… I think it says something like\n"
-	.string "“the life in the sea is endless.”\p"
+	.string "“the life on the land is endless.”\p"
 	.string "Yup, I'm pretty sure that's what\n"
 	.string "it says.$"
 
@@ -1067,7 +1067,7 @@ SlateportCity_Text_ShouldveBroughtMyGameBoy:
 SlateportCity_Text_HotSpringsAfterOperation:
 	.string "When this operation's over, I'll take\n"
 	.string "you to a hot spring spa!\p"
-	.string "That's what our leader said.\n"
+	.string "That's what our leaders said.\n"
 	.string "I can't wait!$"
 
 SlateportCity_Text_SeaIsSoWet:

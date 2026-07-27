@@ -20,7 +20,7 @@
 #define TRAINER_ED                           13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
 #define TRAINER_DECLAN                       15
-#define TRAINER_GRUNT_RUSTURF_TUNNEL         16
+#define TRAINER_GRUNT_AQUA_RUSTURF_TUNNEL    16
 #define TRAINER_GRUNT_WEATHER_INST_1         17
 #define TRAINER_GRUNT_WEATHER_INST_2         18
 #define TRAINER_GRUNT_WEATHER_INST_3         19
@@ -41,10 +41,10 @@
 #define TRAINER_ARCHIE                       34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36
-#define TRAINER_ROSE_1                       37
+#define TRAINER_ROSE                         37
 #define TRAINER_FELIX                        38
 #define TRAINER_VIOLET                       39
-#define TRAINER_ROSE_2                       40
+#define TRAINER_GRUNT_MAGMA_RUSTURF_TUNNEL   40
 #define TRAINER_ROSE_3                       41
 #define TRAINER_ROSE_4                       42
 #define TRAINER_ROSE_5                       43
