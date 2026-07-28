@@ -746,48 +746,6 @@ Gloom
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ROSE_3 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Basic Trainer
-
-Shroomish
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Gloom
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Roselia
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-=== TRAINER_ROSE_4 ===
-Name: ROSE
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Basic Trainer
-
-Shroomish
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Gloom
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Roselia
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
 === TRAINER_ROSE_5 ===
 Name: ROSE
 Class: Aroma Lady
@@ -3411,22 +3369,23 @@ Pic: Guitarist
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Electrike
-Level: 17
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Quick Attack
-- Thunder Wave
+- Shock Wave
 - Spark
-- Leer
+- Bite
+- Roar
 
 Voltorb
-Level: 17
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Charge
 - Shock Wave
-- Screech
+- Charge
+- Swift
+- Self Destruct
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
 Name: GRUNT
@@ -3465,15 +3424,23 @@ Pic: Guitarist
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Voltorb
-Level: 17
+Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shock Wave
+- Rollout
+- Sonic Boom
+- Electro Ball
 
 Magnemite
-Level: 17
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shock Wave
+- Mirror Shot
+- Charge Beam
+- Thunder Wave
 
 === TRAINER_FERNANDO_1 ===
 Name: FERNANDO
@@ -6174,23 +6141,23 @@ Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Zigzagoon
-Level: 17
+Magnemite
+Level: 23
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Headbutt
-- Sand Attack
-- Growl
-- Thunderbolt
+- Shock Wave
+- Volt Switch
+- Magnet Bomb
+- Supersonic
 
 Gulpin
-Level: 17
+Level: 24
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Amnesia
+- Shock Wave
 - Sludge
 - Yawn
-- Pound
+- Poison Gas
 
 === TRAINER_QUINCY ===
 Name: QUINCY
@@ -11038,10 +11005,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_2 ===
 Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+Class: Team Aqua
+Pic: Aqua Grunt M
 Gender: Male
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -11323,11 +11290,36 @@ Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
-Name: TABITHA
+Name: COURTNEY
 Class: Magma Admin
-Pic: Magma Admin
-Gender: Male
+Pic: Magma Grunt F
+Gender: Female
 Music: Magma
+Double Battle: No
+AI: Basic Trainer
+
+Numel
+Level: 18
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Poochyena
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Numel
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Zubat
+Level: 22
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== TRAINER_MATT_MT_CHIMNEY ===
+Name: MATT
+Class: Aqua Admin 
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -11459,6 +11451,28 @@ Class: Magma Leader
 Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Mightyena
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Zubat
+Level: 24
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+Camerupt
+Level: 25
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+
+=== TRAINER_ARCHIE_MT_CHIMNEY ===
+Name: ARCHIE
+Class: Aqua Leader
+Pic: Aqua Leader Archie
+Gender: Male
+Music: Aqua
 Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
@@ -12323,22 +12337,22 @@ Pic: Battle Girl
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+
+Pikachu
+Level: 24
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shock Wave
+- Slam
+- Disarming Voice
+- Double Team
 
 Meditite
-Level: 17
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bide
-- Detect
-- Confusion
-- Thunder Punch
-
-Meditite
-Level: 17
+Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder Punch
-- Detect
-- Confusion
+- Psycho Cut
+- Force Palm
 - Meditate
 
 === TRAINER_DANIELLE ===
@@ -12478,11 +12492,40 @@ Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Ralts
-Level: 16
+Skitty
+Level: 20
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Covet
+- Doubleslap
+- Disarming Voice
+- Assist
+
+Gyarevelry
+Level: 21
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Fairy Wind
+- Fire Fang
+- Flame Charge
+- Celebrate
+
+Swablu
+Level: 21
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Pluck
+- Disarming Voice
+- Fury Attack
+- Sing
+
+Marilia
+Level: 23
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Shiny: Yes
+- Water Pulse
+- Chilling Water
+- Pursuit
+- Hex
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -16313,21 +16356,23 @@ Pic: Bug Maniac
 Gender: Male
 Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Illumise
-Level: 17
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shock Wave
-- Quick Attack
+- Silver Wind
 - Charm
+- Moonlight
 
 Volbeat
-Level: 17
+Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shock Wave
-- Quick Attack
+- Signal Beam
 - Confuse Ray
+- Moonlight
 
 === TRAINER_DARIUS ===
 Name: DARIUS

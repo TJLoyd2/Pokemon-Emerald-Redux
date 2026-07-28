@@ -42,3 +42,291 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_WALLY ===
+Name: WALLY
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+
+Skitty
+Level: 20
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Covet
+- Doubleslap
+- Disarming Voice
+- Assist
+
+Gyarevelry
+Level: 21
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Fairy Wind
+- Fire Fang
+- Flame Charge
+- Celebrate
+
+Swablu
+Level: 21
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Pluck
+- Disarming Voice
+- Fury Attack
+- Sing
+
+Marilia
+Level: 23
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Shiny: Yes
+- Water Pulse
+- Chilling Water
+- Pursuit
+- Hex
+
+=== PARTNER_BRENDAN_MUDKIP ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+
+Slugma
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Flame Burst
+- Rock Tomb
+- Smog
+- Yawn
+
+Taillow
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Wing Attack
+- Quick Attack
+- Twister
+- Work Up
+
+Pikachu
+Level: 21
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Thunder Shock
+- Psybeam
+- Disarming Voice
+- Thunder Wave
+
+Grovyle
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Trailblaze
+- Fury Cutter
+- Double Kick
+- Agility
+
+=== PARTNER_BRENDAN_TREECKO ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+
+Gulpin
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Sludge
+- Smog
+- Rollout
+- Poison Gas
+
+Wiglett
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Aqua Jet
+- Slam
+- Wrap
+- Sand Attack
+
+Pikachu
+Level: 21
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Thunder Shock
+- Psybeam
+- Nuzzle
+- Wish
+
+Combusken
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Fire Punch
+- Double Kick
+- Quick Attack
+- Focus Energy
+
+=== PARTNER_BRENDAN_TORCHIC ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+
+SPECIES_EXEGGCUTE_HOENN
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Uproar
+- Mega Drain
+- Round
+- Hypnosis
+
+Zubat
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Poison Fang
+- Wing Attack
+- Bite
+- Confuse Ray
+
+Pikachu
+Level: 21
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Thunder Shock
+- Psybeam
+- Spark
+- Charge
+
+Marshtomp
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Aqua Tail
+- Bulldoze
+- Rock Tomb
+- Growl
+
+=== PARTNER_MAY_MUDKIP ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Smart Trainer
+
+Numel
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Ember
+- Bulldoze
+- Headbutt
+- Scary Face
+
+SPECIES_CLEFAIRY_HOENN
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Rock Tomb
+- Ancient Power
+- Stored Power
+- Moonlight
+
+Beautifly
+Level: 21
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Silver Wind
+- Dual Wingbeat
+- Electroweb
+- Stun Spore
+
+Grovyle
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Trailblaze
+- Mega Drain
+- Pursuit
+- Leer
+
+=== PARTNER_MAY_TREECKO ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Smart Trainer
+
+Phanpy
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Mud Shot
+- Rollout
+- Headbutt
+- Odor Sleuth
+
+Lombre
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Bullet Seed
+- Chilling Water
+- Fake Out
+- Leech Seed
+
+Beautifly
+Level: 21
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Silver Wind
+- Dual Wingbeat
+- Gust
+- Sticky Web
+
+Combusken
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flame Charge
+- Double Kick
+- Peck
+- Sand Attack
+
+=== PARTNER_MAY_TORCHIC ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Smart Trainer
+
+Electrike
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Spark
+- Charge Beam
+- Psychic Fangs
+- Thunder Wave
+
+Skitty
+Level: 20
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Tackle
+- Fury Swipes
+- Fake Out
+- Wish
+
+Beautifly
+Level: 21
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Silver Wind
+- Dual Wingbeat
+- Poison Sting
+- Silk Trap
+
+Marshtomp
+Level: 23
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Aqua Tail
+- Mud Bomb
+- Bide
+- Growl

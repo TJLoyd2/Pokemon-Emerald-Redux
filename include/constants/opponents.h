@@ -45,8 +45,8 @@
 #define TRAINER_FELIX                        38
 #define TRAINER_VIOLET                       39
 #define TRAINER_GRUNT_MAGMA_RUSTURF_TUNNEL   40
-#define TRAINER_ROSE_3                       41
-#define TRAINER_ROSE_4                       42
+#define TRAINER_ARCHIE_MT_CHIMNEY            41
+#define TRAINER_MATT_MT_CHIMNEY              42
 #define TRAINER_ROSE_5                       43
 #define TRAINER_DUSTY_1                      44
 #define TRAINER_CHIP                         45

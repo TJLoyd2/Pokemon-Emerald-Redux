@@ -748,7 +748,7 @@ Route110_Text_KickUpARuckus:
 
 Route110_Text_MyFirstJobInAqua:
 	.string "This is my first job after joining\n"
-	.string "TEAM AQUA. It's a little scary.$"
+	.string "TEAM MAGMA. It's a little scary.$"
 
 Route110_Text_AquaActionsBringSmiles:
 	.string "TEAM AQUA's actions should bring\n"
@@ -776,9 +776,12 @@ Route110_Text_MayExplainItemfinder:
 	.string "Try it out. If there is an item that's\n"
 	.string "not visible, it emits a sound.\p"
 	.string "Okay, {PLAYER}{KUN}, let's meet again!\p"
-	.string "I know it's a little silly coming from\n"
-	.string "me, but I think you should train a lot\l"
-	.string "harder for the next time.$"
+	.string "...\p"
+	.string "I don't know much about this TEAM AQUA\n"
+	.string "and TEAM MAGMA that you're involved with.\p"
+	.string "You should be careful.\p"
+	.string "I'll be always be there to help you.\l"
+	.string "Good luck with the next time.$"
 
 Route110_Text_BrendanLetsBattle:
 	.string "BRENDAN: Hey, {PLAYER}.\n"
@@ -803,6 +806,13 @@ Route110_Text_BrendanExplainItemfinder:
 	.string "aren't visible.\p"
 	.string "If it senses something, it emits\n"
 	.string "a sound.\p"
+	.string "...\p"
+	.string "TEAM AQUA?\p"
+	.string "TEAM MAGMA?\p"
+	.string "I don't know much about them, but\n"
+	.string "you should be careful.\p"
+	.string "If you get into trouble, I'll be there\n"
+	.string "to help you.\l"
 	.string "Anyway, I'm off to look for new\n"
 	.string "POKéMON.$"
 

@@ -13,15 +13,41 @@ MtChimney_OnResume:
 
 MtChimney_EventScript_Archie::
 	lock
-	faceplayer
-	call_if_unset FLAG_EVIL_LEADER_PLEASE_STOP, MtChimney_EventScript_ArchieGoStopTeamMagma
-	call_if_set FLAG_EVIL_LEADER_PLEASE_STOP, MtChimney_EventScript_ArchieBusyFighting
-	closemessage
 	applymovement LOCALID_MT_CHIMNEY_ARCHIE, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	setflag FLAG_EVIL_LEADER_PLEASE_STOP
 	release
 	end
+
+MtChimney_EventScript_Rival::
+	lock
+	faceplayer
+	msgbox MtChimney_Text_RivalBusy, MSGBOX_DEFAULT
+	applymovement LOCALID_MT_CHIMNEY_RIVAL, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+MtChimney_Text_RivalBusy:
+	.string "I'm glad I can be of some help.\n"
+	.string "I don't know much about this Team Aqua\n"
+	.string "and Magma, but they're no match for us.\p"
+	.string "I'll stop these guys.\n"
+	.string "Go end this!$"
+
+MtChimney_EventScript_Wally::
+	lock
+	faceplayer
+	msgbox MtChimney_Text_WallyBusy, MSGBOX_DEFAULT
+	applymovement LOCALID_MT_CHIMNEY_WALLY, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+MtChimney_Text_WallyBusy:
+	.string "This is a tough place to be, but I'm glad\n"
+	.string "I have my POKéMON with me.\p"
+	.string "I can't talk right now.\n"
+	.string "These guys are tough!$"
 
 MtChimney_EventScript_ArchieGoStopTeamMagma::
 	msgbox MtChimney_Text_ArchieGoStopTeamMagma, MSGBOX_DEFAULT
@@ -39,11 +65,18 @@ MtChimney_EventScript_Maxie::
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_MT_CHIMNEY_MAXIE, Common_Movement_ExclamationMark
+	applymovement LOCALID_MT_CHIMNEY_ARCHIE, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_MT_CHIMNEY_MAXIE, Common_Movement_Delay48
+	applymovement LOCALID_MT_CHIMNEY_ARCHIE, Common_Movement_Delay48
 	waitmovement 0
 	msgbox MtChimney_Text_MaxieIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, MtChimney_EventScript_MayHelpsOut
+	goto_if_eq VAR_RESULT, FEMALE, MtChimney_EventScript_BrendanHelpsOut
+	end
+
+MtChimney_EventScript_MaxieDefeated::
 	msgbox MtChimney_Text_MaxieYouHaventSeenLastOfMagma, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -72,6 +105,172 @@ MtChimney_EventScript_Maxie::
 	clearflag FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY
 	releaseall
 	end
+
+MtChimney_EventScript_MayHelpsOut::
+	setobjectxyperm LOCALID_MT_CHIMNEY_RIVAL, 10, 17
+	addobject LOCALID_MT_CHIMNEY_RIVAL
+	applymovement LOCALID_MT_CHIMNEY_RIVAL, MtChimney_Movement_RivalApproachPlayer
+	waitmovement 0
+	msgbox MtChimney_Text_MayHelpsOut, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, MtChimney_EventScript_MayBattleTreecko
+	case 1, MtChimney_EventScript_MayBattleTorchic
+	case 2, MtChimney_EventScript_MayBattleMudkip
+	end
+
+MtChimney_Movement_RivalApproachPlayer::
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	step_end
+
+MtChimney_Text_MayHelpsOut:
+	.string "I can't just stand by and watch.\n"
+	.string "I'll help you out, {PLAYER}{KUN}!\p"
+	.string "Let's take them down together!$"
+
+MtChimney_EventScript_MayBattleTreecko::
+	multi_2_vs_2 TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat, TRAINER_ARCHIE_MT_CHIMNEY, MtChimney_Text_ArchieDefeat, PARTNER_MAY_TREECKO
+	goto MtChimney_EventScript_MaxieDefeated
+	end
+
+MtChimney_EventScript_MayBattleTorchic::
+	multi_2_vs_2 TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat, TRAINER_ARCHIE_MT_CHIMNEY, MtChimney_Text_ArchieDefeat, PARTNER_MAY_TORCHIC
+	goto MtChimney_EventScript_MaxieDefeated
+	end
+
+MtChimney_EventScript_MayBattleMudkip::
+	multi_2_vs_2 TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat, TRAINER_ARCHIE_MT_CHIMNEY, MtChimney_Text_ArchieDefeat, PARTNER_MAY_MUDKIP
+	goto MtChimney_EventScript_MaxieDefeated
+	end
+
+MtChimney_EventScript_BrendanHelpsOut::
+	applymovement LOCALID_MT_CHIMNEY_RIVAL, MtChimney_Movement_RivalApproachPlayer
+	waitmovement 0
+	msgbox MtChimney_Text_BrendanHelpsOut, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, MtChimney_EventScript_BrendanBattleTreecko
+	case 1, MtChimney_EventScript_BrendanBattleTorchic
+	case 2, MtChimney_EventScript_BrendanBattleMudkip
+	end
+
+MtChimney_Text_BrendanHelpsOut:
+	.string "Alright!\n"
+	.string "It's my turn to help you out, {PLAYER}! \p"
+	.string "Let's do this!$"
+
+MtChimney_EventScript_BrendanBattleTreecko::
+	multi_2_vs_2 TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat, TRAINER_ARCHIE_MT_CHIMNEY, MtChimney_Text_ArchieDefeat, PARTNER_BRENDAN_TREECKO
+	goto MtChimney_EventScript_MaxieDefeated
+	end
+
+MtChimney_EventScript_BrendanBattleTorchic::
+	multi_2_vs_2 TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat, TRAINER_ARCHIE_MT_CHIMNEY, MtChimney_Text_ArchieDefeat, PARTNER_BRENDAN_TORCHIC
+	goto MtChimney_EventScript_MaxieDefeated
+	end
+
+MtChimney_EventScript_BrendanBattleMudkip::
+	multi_2_vs_2 TRAINER_MAXIE_MT_CHIMNEY, MtChimney_Text_MaxieDefeat, TRAINER_ARCHIE_MT_CHIMNEY, MtChimney_Text_ArchieDefeat, PARTNER_BRENDAN_MUDKIP
+	goto MtChimney_EventScript_MaxieDefeated
+	end
+
+MtChimney_Text_ArchieDefeat:
+	.string "… … … … … … …$"
+MtChimney_EventScript_WallyAgainstAdmin::
+	lock
+	applymovement LOCALID_MT_CHIMNEY_MATT, Common_Movement_ExclamationMark
+	applymovement LOCALID_MT_CHIMNEY_TABITHA, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox MtChimney_Text_AdminsNoticePlayer, MSGBOX_DEFAULT
+	setobjectxyperm LOCALID_MT_CHIMNEY_WALLY, 10, 17
+	addobject LOCALID_MT_CHIMNEY_WALLY
+	applymovement LOCALID_MT_CHIMNEY_WALLY, MtChimney_Movement_WallyApproachAdmins
+	waitmovement 0
+	msgbox MtChimney_Text_WallyAgainstAdmin, MSGBOX_DEFAULT
+	multi_2_vs_2 TRAINER_MATT_MT_CHIMNEY, MtChimney_Text_MattDefeat, TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_CourtneyDefeat, PARTNER_WALLY
+	msgbox MtChimney_Text_AdminsAcceptDefeat, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox MtChimney_Text_WallyIllGoBackToVerdanturf, MSGBOX_DEFAULT
+	applymovement LOCALID_MT_CHIMNEY_WALLY, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox MtChimney_Text_ThankYouNotEnoughToBattle, MSGBOX_DEFAULT
+	applymovement LOCALID_MT_CHIMNEY_WALLY, MtChimney_Movement_WallyExit
+	waitmovement 0
+	setvar VAR_UNUSED_0x404E, 1
+	removeobject LOCALID_MT_CHIMNEY_WALLY
+	releaseall
+	end
+
+MtChimney_Text_AdminsNoticePlayer:
+	.string "Hey, you!\n"
+	.string "You think you can stop TEAM MAGMA and\n"
+	.string "TEAM AQUA?\p"
+	.string "You're not gonna be able to handle the both\n"
+	.string "of us alone!\p"
+	.string "We're gonna take you down.$"
+
+MtChimney_Movement_WallyApproachAdmins:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+MtChimney_Text_WallyAgainstAdmin:
+	.string "Huff… huff…\n"
+	.string "I-I'm not gonna let you get away with this!\p"
+	.string "We're gonna take you down, TEAM MAGMA and TEAM AQUA!\p"
+	.string "… … … … … … …\p"
+	.string "I'm stronger than I was before, and you're\n"
+	.string "strong too, {PLAYER}.\p"
+	.string "Let's take them down together!$"
+
+MtChimney_Text_MattDefeat:
+	.string "… … … … … … …\p"
+	.string "I can't believe it!\n"
+	.string "I lost to a couple of kids like you!\p"
+	.string "You and your POKéMON are strong!\p"
+	.string "… … … … … … …$"
+
+MtChimney_Text_CourtneyDefeat:
+	.string "R-really…?\n"
+	.string "Just really…?\p"
+	.string "… … … … … … …\p"
+	.string "Even though we've lost, if our leaders\n"
+	.string "awaken that thing…$"
+
+MtChimney_Text_AdminsAcceptDefeat:
+	.string "MATT: Doesn't matter if we lost to a couple of kids.\n"
+	.string "You'll never be able to stop TEAM MAGMA and TEAM AQUA!\p"
+	.string "COURTNEY: … … … … … … …\p"
+	.string "… … … … … … … …\p"
+	.string "We lost??$"
+
+MtChimney_Text_WallyIllGoBackToVerdanturf:
+	.string "WALLY: I'm glad I could be of some help, {PLAYER}.\n"
+	.string "I don't think I can keep going, but I believe in you.\p"
+	.string "I-I'm not feeling to well and think I should go back\n"
+	.string "to VERDANTURF…\p"
+	.string "… … … … … … …\p"
+	.string "Good luck, {PLAYER}!$"
+
+MtChimney_Text_ThankYouNotEnoughToBattle:
+	.string "{PLAYER}, thank you.\n"
+	.string "For believing in me and letting me help you.$"
+
+MtChimney_Movement_WallyExit:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
 
 MtChimney_EventScript_ArchieApproachPlayerEast::
 	applymovement LOCALID_MT_CHIMNEY_ARCHIE, MtChimney_Movement_ArchieApproachPlayerEast
@@ -551,8 +750,8 @@ MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "Fufufu…$"
 
 MtChimney_Text_MaxieIntro:
-	.string "MAXIE: Hm?\n"
-	.string "Who are you?\p"
+	.string "ARCHIE: Hm?\n"
+	.string "MAXIE: Who are you?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "I'd heard ARCHIE bemoaning a child\n"
@@ -560,7 +759,7 @@ MtChimney_Text_MaxieIntro:
 	.string "affairs.\p"
 	.string "It must be you he meant.\p"
 	.string "Humph! So you're thinking of\n"
-	.string "interfering with us, TEAM MAGMA?\p"
+	.string "interfering with us, TEAM MAGMA, too?\p"
 	.string "Now you listen.\n"
 	.string "Long ago, living things used the\l"
 	.string "land to live and grow.\p"
@@ -584,9 +783,9 @@ MtChimney_Text_MaxieDefeat:
 
 MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 	.string "MAXIE: But, enough.\n"
-	.string "I will back off this time.\p"
+	.string "We will back off this time.\p"
 	.string "But don't think that this is the last\n"
-	.string "you've seen of TEAM MAGMA.\p"
+	.string "you've seen of TEAM MAGMA or TEAM AQUA.\p"
 	.string "Fufufu…\p"
 	.string "Even without the METEORITE, if we\n"
 	.string "obtain that ORB… Fufufu…$"
@@ -609,10 +808,10 @@ MtChimney_Text_TabithaPostBattle:
 	.string "Hehehe…$"
 
 MtChimney_Text_Grunt2Intro:
-	.string "We of TEAM MAGMA are working hard for\n"
+	.string "We of TEAM AQUA are working hard for\n"
 	.string "everyone's sake.\p"
 	.string "Like, if that thing's power made more\n"
-	.string "land, there'd be more places to live.\p"
+	.string "sea, there'd be more places for WATER POKéMON.\p"
 	.string "Everyone'd be happy!$"
 
 MtChimney_Text_Grunt2Defeat:
@@ -690,6 +889,8 @@ MtChimney_Text_ArchieThankYou:
 	.string "But… You…\n"
 	.string "Whose side are you on?\p"
 	.string "Ah, it doesn't matter.\p"
+	.string "I knew I couldn't trust them, but I didn't\n"
+	.string "think they'd go this far.\p"
 	.string "We will remain vigilant and keep up\n"
 	.string "our pursuit of TEAM MAGMA.\p"
 	.string "{PLAYER}, we shall meet again!$"
